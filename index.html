@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Corrida de Carrinho - Multi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header>
+      <h1>Corrida de Carrinho</h1>
+      <div class="controls-top">
+        <div>Modo: <span id="modeLabel">1 Jogador</span></div>
+        <div>Recorde: <span id="bestLabel">0</span></div>
+      </div>
+    </header>
+
+    <main>
+      <canvas id="gameCanvas" width="400" height="600" aria-label="Canvas do jogo"></canvas>
+
+      <div id="uiOverlay" class="overlay">
+        <div class="panel menu">
+          <h2>Jogar</h2>
+
+          <div class="row">
+            <label>Modo</label>
+            <select id="modeSelect">
+              <option value="1">1 Jogador</option>
+              <option value="2">2 Jogadores</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <label>Dificuldade</label>
+            <select id="difficultySelect">
+              <option value="easy">Fácil</option>
+              <option value="medium" selected>Médio</option>
+              <option value="hard">Difícil</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <button id="startBtn">Iniciar</button>
+            <button id="instructionsBtn" class="secondary">Instruções</button>
+          </div>
+
+          <p class="small">Jogador 1: ← → (setas). Jogador 2: A / D.</p>
+        </div>
+
+        <div class="panel gameover hidden" id="gameoverPanel">
+          <h2 id="goTitle">Fim de Jogo</h2>
+          <p id="goText">Pontuação: <strong id="finalScore">0</strong></p>
+          <div class="row">
+            <button id="restartBtn">Jogar de Novo</button>
+            <button id="menuBtn" class="secondary">Voltar ao Menu</button>
+          </div>
+        </div>
+
+        <div class="panel instructions hidden" id="instrPanel">
+          <h3>Instruções</h3>
+          <ul>
+            <li>Modo 1 jogador: desvie dos carrinhos inimigos.</li>
+            <li>Modo 2 jogadores: ambos jogam na mesma tela (evite colisões).</li>
+            <li>Pontuação aumenta com o tempo e por obstáculos evitados.</li>
+            <li>Velocidade dos inimigos aumenta com o tempo.</li>
+          </ul>
+          <div class="row"><button id="backInstr" class="secondary">Voltar</button></div>
+        </div>
+      </div>
+
+      <div id="hud">
+        <div>Tempo: <span id="timeLabel">0</span>s</div>
+        <div>P1: <span id="score1">0</span></div>
+        <div id="p2ScoreWrap" class="hidden">P2: <span id="score2">0</span></div>
+      </div>
+    </main>
+
+    <footer>
+      <small>Feito por você — adapte como quiser 💖</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
